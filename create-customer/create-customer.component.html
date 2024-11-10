@@ -1,0 +1,110 @@
+<section class="container cadastrar-customers ff-inter">
+  <header class="header">
+    <h2>Cadastrar Cliente</h2>
+  </header>
+  <form [formGroup]="formulario">
+    <label for="name">Nome:</label>
+    <input
+    type="text"
+    class="input"
+    id="name"
+    formControlName="name"
+    placeholder="Digite o nome">
+
+    <div class="mensagem__erro" *ngIf="formulario.get('name')?.errors && formulario.get('name')?.touched">
+      O campo nome é obrigatório!
+    </div>
+
+    <label for="cpf">CPF:</label>
+    <input
+    type="text"
+    class="input"
+    id="cpf"
+    formControlName="cpf"
+    placeholder="Digite o cpf">
+
+    <div class="mensagem__erro" *ngIf="formulario.get('cpf')?.errors && formulario.get('cpf')?.touched">
+      O campo cpf é obrigatório!
+    </div>
+
+    <label for="rg">RG:</label>
+    <input
+    type="text"
+    class="input"
+    id="rg"
+    formControlName="rg"
+    placeholder="Digite o rg">
+
+    <div class="mensagem__erro" *ngIf="formulario.get('rg')?.errors && formulario.get('rg')?.touched">
+      O campo rg é obrigatório!
+    </div>
+
+    <label for="birth_date">Data de Nascimento:</label>
+    <input
+    type="text"
+    class="input"
+    id="birth_date"
+    formControlName="birth_date"
+    placeholder="Digite a data de nascimento">
+
+    <div class="mensagem__erro" *ngIf="formulario.get('birth_date')?.errors && formulario.get('birth_date')?.touched">
+      O campo data de nascimento é obrigatório!
+    </div>
+
+    <label for="address">Endereço:</label>
+    <input
+    type="text"
+    class="input"
+    id="address"
+    formControlName="address"
+    placeholder="Digite o endereço">
+
+    <div class="mensagem__erro" *ngIf="formulario.get('address')?.errors && formulario.get('address')?.touched">
+      O campo cpf é obrigatório!
+    </div>
+
+    <label for="phone_number">Telefone:</label>
+    <input
+    type="text"
+    class="input"
+    id="phone_number"
+    formControlName="phone_number"
+    placeholder="Digite o telefone">
+
+    <div class="mensagem__erro" *ngIf="formulario.get('phone_number')?.errors && formulario.get('phone_number')?.touched">
+      O campo telefone é obrigatório!
+    </div>
+
+    <label for="email">Email:</label>
+    <input
+    type="text"
+    class="input"
+    id="email"
+    formControlName="email"
+    placeholder="Digite o email">
+
+    <div class="mensagem__erro" *ngIf="formulario.get('email')?.errors && formulario.get('email')?.touched">
+      O campo email é obrigatório!
+    </div>
+
+    <label for="create_date">Data de criação:</label>
+    <input
+    type="text"
+    class="input"
+    id="create_date"
+    formControlName="create_date"
+    placeholder="Digite a data de criação">
+
+    <div class="mensagem__erro" *ngIf="formulario.get('create_date')?.errors && formulario.get('create_date')?.touched">
+      O campo data de criação é obrigatório!
+    </div>
+    <div class="acoes">
+      <button (click)="createCustomer()"
+      [disabled]="!formulario.valid"
+      [ngClass]="habilitarBotao()"
+      >Salvar
+    </button>
+      <button (click)="cancelCustomer()" class="botao">Cancelar</button>
+    </div>
+  </form>
+</section>
